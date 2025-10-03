@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="overhead_camera_mount">
+    <static>true</static>
+    <link name="link">
+
+      <!-- Inertial properties -->
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <!-- Replace these values with actual values for your object -->
+          <ixx>0.136322</ixx>
+          <ixy>0</ixy>
+          <ixz>0.009477</ixz>
+          <iyy>0.189113</iyy>
+          <iyz>0</iyz>
+          <izz>0.178258</izz>
+        </inertia>
+        <pose>0 0 0 0 0 0</pose> <!-- Optional: adjust pose of the center of mass -->
+      </inertial>
+      <!-- Visual properties -->
+      <visual name="visual">
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>model://overhead_camera_mount/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>0.0009 0.0009 0.0009</scale>
+            <uri>model://overhead_camera_mount/meshes/overhead.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- Collision properties -->
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.0009 0.0009 0.0009</scale>
+            <uri>model://overhead_camera_mount/meshes/overhead.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <sensor type="camera" name="zed2_rgb_sensor">
+  <camera>
+    <horizontal_fov>1.3962634</horizontal_fov>
+    <image>
+      <width>1280</width>
+      <height>720</height>
+    </image>
+    <clip>
+      <near>0.1</near>
+      <far>100</far>
+    </clip>
+  </camera>
+</sensor>
+
+
+    </link>
+  </model>
+</sdf>

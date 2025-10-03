@@ -60,26 +60,26 @@ def generate_launch_description():
         arguments=[
             "joint_state_broadcaster",
             "--controller-manager",
-            "/controller_manager",
+            "/controller_manager", "--controller-manager-timeout", "120", "--switch-timeout", "100"
         ],
     )
 
     arm_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["arm_controller", "--controller-manager", "/controller_manager"],
+        arguments=["arm_controller", "--controller-manager", "/controller_manager", "--controller-manager-timeout", "120", "--switch-timeout", "100"],
     )
 
     gripper_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["gripper_controller", "--controller-manager", "/controller_manager"],
+        arguments=["gripper_controller", "--controller-manager", "/controller_manager", "--controller-manager-timeout", "120", "--switch-timeout", "100"],
     )
 
     return LaunchDescription(
         [
             is_sim_arg,
-            robot_state_publisher_node,
+            #robot_state_publisher_node,
             controller_manager,
             joint_state_broadcaster_spawner,
             arm_controller_spawner,
