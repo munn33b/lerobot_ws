@@ -5,6 +5,7 @@
         <!-- ros2_control Gazebo -->
         <hardware>
             <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+            <update_rate>30</update_rate>
         </hardware>
 
         <joint name="1">

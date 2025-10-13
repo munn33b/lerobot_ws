@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 10 # Hz
+    update_rate: 60 # Hz
 
     arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
@@ -16,6 +16,10 @@ controller_manager:
 
 arm_controller:
   ros__parameters:
+    update_rate: 60
+    state_publish_rate: 50.0
+    command_publish_rate: 50.0
+    action_monitor_rate: 50.0
     joints:
       - "1"
       - "2"

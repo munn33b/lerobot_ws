@@ -44,19 +44,7 @@
         </geometry>
       </collision>
 
-      <sensor type="camera" name="zed2_rgb_sensor">
-  <camera>
-    <horizontal_fov>1.3962634</horizontal_fov>
-    <image>
-      <width>1280</width>
-      <height>720</height>
-    </image>
-    <clip>
-      <near>0.1</near>
-      <far>100</far>
-    </clip>
-  </camera>
-</sensor>
+
 
 
     </link>
